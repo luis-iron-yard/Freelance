@@ -23,11 +23,15 @@ $(function() {
             $.ajax({
                 url: "https://formspree.io/rdzalb@gmail.com",
                 type: "POST",
+                headers : {
+                    Accept : 'application/json'
+                      },
                 data: {
                     name: name,
                     phone: phone,
                     email: email,
                     message: message
+                    dataType: "json"
                 },
                 cache: false,
                 success: function() {
