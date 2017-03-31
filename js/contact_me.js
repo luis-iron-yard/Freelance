@@ -32,7 +32,7 @@ $(function() {
                     // email: email,
                     // message: message,
                 dataType: 'json',
-                cache: false,
+                cache: true,
                 success: function() {
                     // Enable button & show success message
                     $("#btnSubmit").attr("disabled", false);
