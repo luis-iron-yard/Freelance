@@ -31,9 +31,8 @@ $(function() {
                     // phone: phone,
                     // email: email,
                     // message: message,
-                dataType: json
-              },
-                cache: false),
+                dataType: json,
+                cache: false,
                 success: function() {
                     // Enable button & show success message
                     $("#btnSubmit").attr("disabled", false);
@@ -59,6 +58,7 @@ $(function() {
                     $('#contactForm').trigger("reset");
                 },
             });
+          });
         },
         filter: function() {
             return $(this).is(":visible");
