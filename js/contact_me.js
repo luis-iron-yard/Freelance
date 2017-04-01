@@ -23,6 +23,7 @@ $(function() {
             $.ajax({
                 url: "https://formspree.io/rdzalb+formspree@gmail.com",
                 method: "POST",
+                contentType: "application/json",
                 data:  $(this).serialize(),
                 dataType: "json",
                 success: function() {
