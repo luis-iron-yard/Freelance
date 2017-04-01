@@ -23,16 +23,8 @@ $(function() {
             $.ajax({
                 url: "https://formspree.io/rdzalb+formspree@gmail.com",
                 method: "POST",
-                // headers : {
-                //     Accept : 'application/json'
-                //       },
                 data:  $(this).serialize(),
-                    // name: name,
-                    // phone: phone,
-                    // email: email,
-                    // message: message,
-                dataType: 'json',
-                cache: true,
+                dataType: "json",
                 success: function() {
                     // Enable button & show success message
                     $("#btnSubmit").attr("disabled", false);
@@ -58,7 +50,6 @@ $(function() {
                     $('#contactForm').trigger("reset");
                 },
             });
-
         },
         filter: function() {
             return $(this).is(":visible");
