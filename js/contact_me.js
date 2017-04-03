@@ -1,25 +1,17 @@
-$(function() {
-
-    $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
-        preventSubmit: true,
-        submitError: function($form, event, errors) {
-            // additional error messages or events
-        },
-        submitSuccess: function($form, event) {
-            // Prevent spam click and default submit behaviour
-            $("#btnSubmit").attr("disabled", true);
-            event.preventDefault();
-
+$(document).ready(function() {
+    $("#contactForm").submit(function(e){
             // get values from FORM
-            var name = $("input#name").val();
-            var email = $("input#email").val();
-            var phone = $("input#phone").val();
-            var message = $("textarea#message").val();
+            var name = $("input#name")
+            var email = $("input#email")
+            var phone = $("input#phone")
+            var message = $("textarea#message")
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
-            if (firstName.indexOf(' ') >= 0) {
-                firstName = name.split(' ').slice(0, -1).join(' ');
-            }
+            if(name.val() == "" || email.val() == "" || message.val() == "") {
+                $('.submit-fail').fadeToggle(400);
+                return false;
+                }
+                else {
             $.ajax({
                 url: "https://formspree.io/rdzalb@gmail.com",
                 type: "POST",
@@ -74,4 +66,5 @@ $(function() {
 // When clicking on Full hide fail/success boxes
 $('#name').focus(function() {
     $('#success').html('');
+
 });
