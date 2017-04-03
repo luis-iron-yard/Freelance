@@ -7,9 +7,11 @@ $(document).ready(function() {
             var message = $("textarea#message")
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
-            if (firstName.indexOf(' ') >= 0) {
-                firstName = name.split(' ').slice(0, -1).join(' ');
-            }
+            if(name.val() == "" || email.val() == "" || message.val() == "") {
+                $('.submit-fail').fadeToggle(400);
+                return false;
+                }
+                else {
             $.ajax({
                 url: "https://formspree.io/rdzalb+formspree@gmail.com",
                 method: "POST",
@@ -19,9 +21,8 @@ $(document).ready(function() {
                 e.preventDefault();
                 $(this).get(0).reset();
                 $('.submit-success').fadeToggle(400);
+              }
       }),
-
-
   $('.submit-fail, .submit-success').click(function() {
     $(this).hide();
   })
