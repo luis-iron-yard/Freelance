@@ -30,7 +30,7 @@ $(function() {
                     name: name,
                     phone: phone,
                     email: email,
-                    message: message
+                    message: message,
                     dataType: "json"
                 },
                 cache: false,
